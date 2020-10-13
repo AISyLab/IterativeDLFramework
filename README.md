@@ -108,7 +108,7 @@ plot_input_gradients_epochs(framework, 10)
 
 In the above example, it will generate a 2D plot for the input gradients for all epochs during the neural network training in iteration 10.
 
-## Convolutional Neural Network ##
+## Convolutional Neural Networks ##
 
 The file __commons/neural_networks.py__ contain all CNN models used in the paper. They are:
 
