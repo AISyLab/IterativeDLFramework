@@ -59,6 +59,8 @@ framework.run_iterative(
 )
 ```
 
+As we can see in the above code, the user can set the directory to where the datasets (in our case, __cswap_pointer.h5__ and __cswap_arith.h5__) are located. By setting the dataset with method __set_dataset__, parameters from __commons/paramaters.py__ are automatically set to the framework.
+
 ### Plotting framework evolution results ###
 
 To plot the framework results in terms of minimum, maximum and average single (scalar) trace accuracy, you must call the following function:
