@@ -187,4 +187,4 @@ This way, the information displayed during training will provide the accuracy fo
 labels_dl = framework.get_labels_dl()
 ```
 
-Then, the user can, e.g., select __labels_dl[10]__ that are all new labels returned by the iterative framework after phase 3 of iteration 10, in all the epochs. As an example __labels_dl[10][:, 5]__ returns the labels for the full attack set after phase 3 of iteration 10 and epoch 5. After that, the user can split the vector __labels_dl[10][:, 5]__ into scalar multiplication (or modular exponentiation) traces with different lenghts. 
+Then, the user can, e.g., select __labels_dl[10]__ that are all new labels returned by the iterative framework after phase 3 of iteration 10, in all the epochs. As an example __labels_dl[10][5]__ returns the labels for the full attack set after phase 3 of iteration 10 and epoch 5. After that, the user can split the vector __labels_dl[10][5]__ into scalar multiplication (or modular exponentiation) traces with different lenghts. 
