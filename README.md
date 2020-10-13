@@ -168,3 +168,15 @@ parameters_my_dataset = {
 
 Now, __my_dataset__ can be called from __set_dataset()__ method.
 
+## Additional information ##
+
+For the two considered datasets, __cswap_pointer__ and __cswap_arith__, all scalar multiplications contained exactly 255 bits, resulting in 255 sub-traces. In case your dataset contains scalar multiplication (or modular exponentiation) traces with different bit lengths, you need to set the parameter __equal_sizes_traces=False__ before running the framework (this parameter is to True as a default value):
+
+```python
+framework.run_iterative(
+    n_iterations=50,
+    data_augmentation=[200],
+    visualization=True,
+    equal_size_traces=False
+)
+```
