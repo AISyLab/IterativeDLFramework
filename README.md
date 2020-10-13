@@ -115,7 +115,24 @@ The file __commons/neural_networks.py__ contain all CNN models used in the paper
 CNN model name  | Details
 ------------- | -------------
 cnn_supervised  | CNN used to produce supervised classification results
-cnn_cswap_pointer  | CNN without regularization used to attack cswap_pointer dataset
-cnn_cswap_pointer_dropout  | CNN with dropout used to attack cswap_pointer dataset
-cnn_cswap_pointer_random  | CNN with hyperparameters defined at random without regularization used to attack cswap_pointer dataset
-cnn_cswap_pointer_dropout_random  | CNN with hyperparameters defined at random with dropout used to attack cswap_pointer dataset
+cnn_cswap_pointer  | CNN without regularization used to attack __cswap_pointer__ dataset
+cnn_cswap_pointer_dropout  | CNN with dropout used to attack __cswap_pointer__ dataset
+cnn_cswap_pointer_random  | CNN with hyperparameters defined at random without regularization used to attack __cswap_pointer__ dataset
+cnn_cswap_pointer_dropout_random  | CNN with hyperparameters defined at random with dropout used to attack __cswap_pointer__ dataset
+cnn_cswap_arith  | CNN without regularization used to attack __cswap_arith__ dataset
+cnn_cswap_arith_dropout  | CNN with dropout used to attack __cswap_arith__ dataset
+cnn_cswap_arith_random  | CNN with hyperparameters defined at random without regularization used to attack __cswap_arith__ dataset
+cnn_cswap_arith_dropout_random  | CNN with hyperparameters defined at random with dropout used to attack __cswap_arith__ dataset
+
+Furthermore, we also define CNNs for the case when attacked interval is narrowed down by using gradient visualization:
+
+CNN model name  | Details
+------------- | -------------
+cnn_cswap_pointer_gv  | CNN without regularization used to attack __cswap_pointer__ dataset
+cnn_cswap_pointer_dropout_gv  | CNN with dropout used to attack __cswap_pointer__ dataset
+cnn_cswap_pointer_random_gv  | CNN with hyperparameters defined at random without regularization used to attack __cswap_pointer__ dataset
+cnn_cswap_pointer_dropout_random_gv  | CNN with hyperparameters defined at random with dropout used to attack __cswap_pointer__ dataset
+cnn_cswap_arith_gv  | CNN without regularization used to attack __cswap_arith__ dataset
+cnn_cswap_arith_dropout_gv  | CNN with dropout used to attack __cswap_arith__ dataset
+cnn_cswap_arith_random_gv  | CNN with hyperparameters defined at random without regularization used to attack __cswap_arith__ dataset
+cnn_cswap_arith_dropout_random_gv  | CNN with hyperparameters defined at random with dropout used to attack __cswap_arith__ dataset
