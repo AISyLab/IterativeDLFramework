@@ -136,3 +136,35 @@ cnn_cswap_arith_gv  | CNN without regularization used to attack __cswap_arith__ 
 cnn_cswap_arith_dropout_gv  | CNN with dropout used to attack __cswap_arith__ dataset
 cnn_cswap_arith_random_gv  | CNN with hyperparameters defined at random without regularization used to attack __cswap_arith__ dataset
 cnn_cswap_arith_dropout_random_gv  | CNN with hyperparameters defined at random with dropout used to attack __cswap_arith__ dataset
+
+## Adding new datasets ##
+
+To add a new dataset to the framework, the user must only edit the file __commons/datasets.py__. First, add a new dataset to the 
+
+```python
+self.dataset_list = {
+    "cswap_arith": parameters_cswap_arith,
+    "cswap_pointer": parameters_cswap_pointer,
+    "my_dataset": parameters_my_dataset,
+}
+```
+
+Second, the user must define the dictionary for the new dataset:
+
+```python
+parameters_my_dataset = {
+    "name": "my_dataset",
+    "data_length": 2,
+    "first_sample": 0,
+    "number_of_samples": 2000,
+    "n_set1": 25500,
+    "n_set2": 25500,
+    "n_attack": 510,
+    "classes": 2,
+    "epochs": 25,
+    "mini-batch": 64
+}
+```
+
+Now, __my_dataset__ can be called from __set_dataset()__ method.
+
