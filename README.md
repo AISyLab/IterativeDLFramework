@@ -53,7 +53,7 @@ framework.set_mini_batch(100)
 framework.set_epochs(10)
 framework.set_neural_network(NeuralNetwork().cnn_cswap_pointer)
 framework.run_iterative(
-    n_iterations=3,
+    n_iterations=50,
     data_augmentation=[200],
     visualization=True
 )
@@ -88,3 +88,22 @@ plot_framework_evolution(framework)
 
 Note that the variable __framework__ is defined in the framework configuration. This function __plot_framework_evolution__ can only be called after the framework is finished. 
 
+### Plotting sum of input gradients ###
+
+To plot the sum of input gradients (for all the epochs of one framework iteration __in phase 3__), the user must call the following method:
+```python
+from plot_results import plot_input_gradients_sum
+plot_input_gradients_sum(framework, 10)
+```
+
+In the above example, it will generate a plot for the sum of input gradients from all epochs during the neural network training in iteration 10.
+
+### Plotting input gradients for all epochs ###
+
+To plot input gradients for all the epochs of one framework iteration (__in phase 3__), the user must call the following method:
+```python
+from plot_results import plot_input_gradients_epochs
+plot_input_gradients_epochs(framework, 10)
+```
+
+In the above example, it will generate a 2D plot for the input gradients for all epochs during the neural network training in iteration 10.
