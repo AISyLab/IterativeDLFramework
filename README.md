@@ -188,3 +188,11 @@ labels_dl = framework.get_labels_dl()
 ```
 
 Then, the user can, e.g., select __labels_dl[10]__ that are all new labels returned by the iterative framework after phase 3 of iteration 10, in all the epochs. As an example __labels_dl[10][5]__ returns the labels for the full attack set after phase 3 of iteration 10 and epoch 5. After that, the user can split the vector __labels_dl[10][5]__ into scalar multiplication (or modular exponentiation) traces with different lenghts. 
+
+Additionaly, the user can also retrive the accuracy for set1 and for set2 for all framework iterations:
+```python
+accuracy_set1 = framework.get_accuracy_set1()
+accuracy_set2 = framework.get_accuracy_set2()
+```
+
+The vectors __accuracy_set1__ and __accuracy_set2__ contain the accuracy for the full set1 and set2 after the processing of framework iteration phases 2 and 3, respectively. 
