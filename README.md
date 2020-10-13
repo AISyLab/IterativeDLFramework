@@ -59,7 +59,24 @@ framework.run_iterative(
 )
 ```
 
-As we can see in the above code, the user can set the directory to where the datasets (in our case, __cswap_pointer.h5__ and __cswap_arith.h5__) are located. By setting the dataset with method __set_dataset__, parameters from __commons/paramaters.py__ are automatically set to the framework.
+As we can see in the above code, the user can set the directory to where the datasets (in our case, __cswap_pointer.h5__ and __cswap_arith.h5__) are located. By setting the dataset with method __set_dataset__, parameters from __commons/datasets.py__ are automatically set to the framework. For example, when we set __cswap_pointer__ as the dataset, the following parameters are defined:
+
+```python
+parameters_cswap_pointer = {
+    "name": "cswap_pointer",
+    "data_length": 2,
+    "first_sample": 0,
+    "number_of_samples": 1000,
+    "n_set1": 31875,
+    "n_set2": 31875,
+    "n_attack": 12750,
+    "classes": 2,
+    "epochs": 25,
+    "mini-batch": 64
+}
+```
+
+To add a new dataset, please check the section __Adding new datasets__.
 
 ### Plotting framework evolution results ###
 
