@@ -10,6 +10,7 @@ To load datasets into numpy arrays, you can use the following example code:
 
 ```python
 import h5py
+import numpy as np
 dataset_directory = "C:/my_dir/" # change this path to the location of your downloaded datasets 
 dataset_name = "cswap_pointer.h5" # or "cswap_arith.h5"
 hf = h5py.File("{}{}".format(dataset_directory, dataset_name), 'r')
