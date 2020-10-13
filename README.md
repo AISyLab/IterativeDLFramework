@@ -112,7 +112,10 @@ In the above example, it will generate a 2D plot for the input gradients for all
 
 The file __commons/neural_networks.py__ contain all CNN models used in the paper. They are:
 
-First Header  | Second Header
+CNN model name  | Details
 ------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+cnn_supervised  | CNN used to produce supervised classification results
+cnn_cswap_pointer  | CNN without regularization used to attack cswap_pointer dataset
+cnn_cswap_pointer_dropout  | CNN with dropout used to attack cswap_pointer dataset
+cnn_cswap_pointer_random  | CNN with hyperparameters defined at random without regularization used to attack cswap_pointer dataset
+cnn_cswap_pointer_dropout_random  | CNN with hyperparameters defined at random with dropout used to attack cswap_pointer dataset
