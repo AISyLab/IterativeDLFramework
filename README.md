@@ -35,3 +35,36 @@ For cswap_arith.h5 dataset, the variable train_samples is an array of shape (637
 
 For cswap_pointer.h5 and cswap_arith.h5 datasets, the variable train_data is an array of shape (63750, 2). The total amount of 63750 sub-traces represent 250 255-bit calar multiplication (250 x 255= 63750 sub-traces). The variable attack_data is an array of shape (12750, 2). The total amount of 12750 sub-traces represent 50 255-bit calar multiplication (50 x 255= 12750 sub-traces). Each sub-traces contains 2-byte data. The first second represents the labels (0 or 1) obtained after applying clustering-based horizontal attack. The second byte represents the true label (0 or 1) associated to each sub-trace.
 
+## Code ##
+
+The file __run_framework.py__ contain the main structure to run the iterative framework. This is an example of how the framework is configured and run:
+
+```python
+from commons.neural_networks import NeuralNetwork
+from commons.framework import Framework
+
+# settings
+framework = Framework()
+framework.set_directory("D:/traces/ecc_datasets/")
+framework.set_dataset("cswap_pointer")
+framework.set_znorm()
+framework.set_mini_batch(100)
+framework.set_epochs(10)
+framework.set_neural_network(NeuralNetwork().cnn_cswap_pointer)
+framework.run_iterative(
+    n_iterations=3,
+    data_augmentation=[200],
+    visualization=True
+)
+```
+
+### Plotting framework evolution results ###
+
+To plot the framework results in terms of minimum, maximum and average single (scalar) trace accuracy, you must call the following function:
+```python
+from plot_results import plot_framework_evolution
+plot_framework_evolution(framework)
+```
+
+Note that the variable __framework__ is defined in the framework configuration. This function __plot_framework_evolution__ can only be called after the framework is finished. 
+
