@@ -182,7 +182,7 @@ framework.run_iterative(
 )
 ```
 
-This way, the information displayed during training will provide the accuracy for the while attack set, instead per scalar multiplication (or modular exponentiation) trace. After the framework finished the execution, the following method returns the final label for each sub-trace in the full attack set, for all iterations:
+This way, the information displayed during training will provide the accuracy for the whole attack set, instead per scalar multiplication (or modular exponentiation) trace. After the framework finished the execution, the following method returns the final label for each sub-trace in the full attack set, for all iterations:
 
 ```python
 labels_dl = framework.get_labels_dl()
