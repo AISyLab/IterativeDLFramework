@@ -8,7 +8,7 @@ Authors: Guilherme Perin, Lukasz Chmielewski, Lejla Batina, Stjepan Picek
 ### Download ###
 
 The datasets to be used with this framework must be downloaded from the following link: https://www.dropbox.com/s/e2mlegb71qp4em3/ecc_datasets.zip?dl=0
-The file ecc_datasets.zip contain two ECC datasets. Each dataset contain 76500 traces, each one of them representing a sub-trace in a scalar multiplication. In total, each dataset contains 300 255-bit scalar multiplications. Each scalar multiplication contain a randomized 255-bit scalar.
+The file ecc_datasets.zip contain two ECC datasets. Each dataset contains 76500 traces, each one of them representing a sub-trace in a scalar multiplication. In total, each dataset contains 300 255-bit scalar multiplications. Each scalar multiplication contain a randomized 255-bit scalar.
 
 ### Opening datasets ###
 
