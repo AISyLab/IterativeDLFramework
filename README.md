@@ -60,7 +60,35 @@ framework.run_iterative(
 )
 ```
 
-As we can see in the above code, the user can set the directory to where the datasets (in our case, __cswap_pointer.h5__ and __cswap_arith.h5__) are located. By setting the dataset with method __set_dataset__, parameters from __commons/datasets.py__ are automatically set to the framework. For example, when we set __cswap_pointer__ as the dataset, the following parameters are defined:
+The method __run_framework__ must be set at least with the number of framework iterations. Data augmentation is optional. In the above example, __data_augmentation=[200]__ defines data augmentation for 200 times per epoch. To check the data aumentation methods, please check the implemented functions in file __commons/data_augmentation.py__. The user can also set custom data augmentation methods and call them by modifying the following code in the __commons/framework.py__ file:
+
+```python
+self.model.fit_generator(
+    generator=sca_data_augmentation.data_augmentation_shifts(set1_samples, y_set1, self.target_params),
+    steps_per_epoch=data_augmentation[0],
+    epochs=self.target_params["epochs"],
+    verbose=0,
+    validation_data=(x_attack, y_test),
+    validation_steps=1,
+    callbacks=callbacks)
+```
+
+And:
+
+```python
+self.model.fit_generator(
+    generator=sca_data_augmentation.data_augmentation_shifts(set2_samples, y_set2, self.target_params),
+    steps_per_epoch=data_augmentation[0],
+    epochs=self.target_params["epochs"],
+    verbose=0,
+    validation_data=(x_attack, y_test),
+    validation_steps=1,
+    callbacks=callbacks)
+```
+
+Note that in the the above code, we set __data_augmentation_shifts__ as data augmentation method.
+
+Moreover, as we can see in the above code, the user can set the directory to where the datasets (in our case, __cswap_pointer.h5__ and __cswap_arith.h5__) are located. By setting the dataset with method __set_dataset__, parameters from __commons/datasets.py__ are automatically set to the framework. For example, when we set __cswap_pointer__ as the dataset, the following parameters are defined:
 
 ```python
 parameters_cswap_pointer = {
@@ -96,8 +124,7 @@ To plot the sum of input gradients (for all the epochs of one framework iteratio
 from plot_results import plot_input_gradients_sum
 plot_input_gradients_sum(framework, 10)
 ```
-
-In the above example, it will generate a plot for the sum of input gradients from all epochs during the neural network training in iteration 10.
+Also, in the __run_iterative__ method, the user must set __visualization=True__. In the above example, it will generate a plot for the sum of input gradients from all epochs during the neural network training in iteration 10.
 
 ### Plotting input gradients for all epochs ###
 
@@ -107,7 +134,7 @@ from plot_results import plot_input_gradients_epochs
 plot_input_gradients_epochs(framework, 10)
 ```
 
-In the above example, it will generate a 2D plot for the input gradients for all epochs during the neural network training in iteration 10.
+Also, in the __run_iterative__ method, the user must set __visualization=True__. In the above example, it will generate a 2D plot for the input gradients for all epochs during the neural network training in iteration 10.
 
 ## Convolutional Neural Networks ##
 
