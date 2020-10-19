@@ -209,7 +209,7 @@ framework.run_iterative(
 )
 ```
 
-This way, the information displayed during training will provide the accuracy for the whole attack set, instead per scalar multiplication (or modular exponentiation) trace. After the framework finished the execution, the following method returns the final label for each sub-trace in the full attack set, for all iterations:
+This way, the information displayed during training will provide the accuracy for the whole attack set, instead per scalar multiplication (or modular exponentiation) trace. After the framework finishes the execution, the following method returns the final label for each sub-trace in the full attack set, for all iterations:
 
 ```python
 labels_dl = framework.get_labels_dl()
@@ -217,7 +217,7 @@ labels_dl = framework.get_labels_dl()
 
 Then, the user can, e.g., select __labels_dl[10]__ that are all new labels returned by the iterative framework after phase 3 of iteration 10, in all the epochs. As an example __labels_dl[10][5]__ returns the labels for the full attack set after phase 3 of iteration 10 and epoch 5. After that, the user can split the vector __labels_dl[10][5]__ into scalar multiplication (or modular exponentiation) traces with different lenghts. 
 
-Additionaly, the user can also retrive the accuracy for set1 and for set2 for all framework iterations:
+Additionaly, the user can also retrieve the accuracy for set1 and for set2 for all framework iterations:
 ```python
 accuracy_set1 = framework.get_accuracy_set1()
 accuracy_set2 = framework.get_accuracy_set2()
