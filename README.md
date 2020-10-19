@@ -167,7 +167,7 @@ cnn_cswap_arith_dropout_random_gv  | CNN with hyperparameters defined at random 
 
 ## Adding new datasets ##
 
-To add a new dataset to the framework, the user must only edit the file __commons/datasets.py__. First, add a new dataset to the 
+To add a new dataset to the framework, the user must only edit the file __commons/datasets.py__. First, add a new dataset to the following list:
 
 ```python
 self.dataset_list = {
