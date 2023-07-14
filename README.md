@@ -29,13 +29,13 @@ attack_data = np.array(hf.get('attacking_data'))
 
 #### Trace Samples ####
 
-For cswap_pointer.h5 dataset, the variable train_samples is an array of shape (63750, 1000). The total amount of 63750 sub-traces represent 250 255-bit calar multiplication (250 x 255= 63750 sub-traces). The variable attack_samples is an array of shape (12750, 1000). The total amount of 12750 sub-traces represent 50 255-bit calar multiplication (50 x 255= 12750 sub-traces). Each sub-traces contains 1000 samples.
+For cswap_pointer.h5 dataset, the variable train_samples is an array of shape (63750, 1000). The total amount of 63750 sub-traces represent 250 255-bit scalar multiplication (250 x 255= 63750 sub-traces). The variable attack_samples is an array of shape (12750, 1000). The total amount of 12750 sub-traces represent 50 255-bit scalar multiplication (50 x 255= 12750 sub-traces). Each sub-traces contains 1000 samples.
 
-For cswap_arith.h5 dataset, the variable train_samples is an array of shape (63750, 8000). The total amount of 63750 sub-traces represent 250 255-bit calar multiplication (250 x 255= 63750 sub-traces). The variable attack_samples is an array of shape (12750, 8000). The total amount of 12750 sub-traces represent 50 255-bit calar multiplication (50 x 255= 12750 sub-traces). Each sub-traces contains 8000 samples.
+For cswap_arith.h5 dataset, the variable train_samples is an array of shape (63750, 8000). The total amount of 63750 sub-traces represent 250 255-bit scalar multiplication (250 x 255= 63750 sub-traces). The variable attack_samples is an array of shape (12750, 8000). The total amount of 12750 sub-traces represent 50 255-bit scalar multiplication (50 x 255= 12750 sub-traces). Each sub-traces contains 8000 samples.
 
 #### Trace Data ####
 
-For cswap_pointer.h5 and cswap_arith.h5 datasets, the variable train_data is an array of shape (63750, 2). The total amount of 63750 sub-traces represent 250 255-bit calar multiplication (250 x 255= 63750 sub-traces). The variable attack_data is an array of shape (12750, 2). The total amount of 12750 sub-traces represent 50 255-bit calar multiplication (50 x 255= 12750 sub-traces). Each sub-traces contains 2-byte data. The first second represents the labels (0 or 1) obtained after applying clustering-based horizontal attack. The second byte represents the true label (0 or 1) associated to each sub-trace.
+For cswap_pointer.h5 and cswap_arith.h5 datasets, the variable train_data is an array of shape (63750, 2). The total amount of 63750 sub-traces represent 250 255-bit scalar multiplication (250 x 255= 63750 sub-traces). The variable attack_data is an array of shape (12750, 2). The total amount of 12750 sub-traces represent 50 255-bit scalar multiplication (50 x 255= 12750 sub-traces). Each sub-traces contains 2-byte data. The first second represents the labels (0 or 1) obtained after applying clustering-based horizontal attack. The second byte represents the true label (0 or 1) associated to each sub-trace.
 
 ## Code ##
 
